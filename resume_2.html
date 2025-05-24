@@ -134,11 +134,11 @@
                             class="fas fa-bars humbarger-menu"></span><span class="fal fa-times closeMenu"></span></div>
                     <div class="nav-list">
                         <ul>
-                            <li><a class="active">Profile</a></li>
-                            <li><a>Summary</a></li>
-                            <li><a>Experience</a></li>
-                            <li><a>Education</a></li>
-                            <li><a>Skills</a></li>
+                            <li><a href="#profile" class="active">Profile</a></li>
+                            <li><a href="#summary">Summary</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#skills">Skills</a></li>
                             <li><a href="/download/PHP AND Node js Developer - 4.5+ Years in Web & Backend Development And 2 Years experience in node js  - Node js,Express js, redis, postgresql,javascript -Influencer paltform,E-commerce and subscription platfo (1).docx"
                                     class="cta-btn">Download Resume</a></li>
                         </ul>
@@ -304,63 +304,8 @@
                 </div>
             </div>
         </div>
-        <div id="custom-modal" class="custom-nerd-modal common-resumesite1" data-site-index="3">
-            <div class="select-resume1">
-                <div class="custom-modal-content"><span class="cancel-modal"></span>
-                    <h2 class="template-heading resumemain-heading">Select a Template</h2>
-                    <p class="template-content">Choose a design that represents you.</p>
-                    <div class="represent-skin website-modal">
-                        <div class="select-skin"><input name="skin" type="radio" id="minimalist"
-                                data-skincd="SIT4"><label for="minimalist" class="minimalist"><span
-                                    class="skin-name">Minimalist</span></label></div>
-                        <div class="select-skin"><input name="skin" type="radio" id="classic" data-skincd="SIT1"><label
-                                for="classic" class="classic"><span class="skin-name">Classic</span></label></div>
-                        <div class="select-skin"><input name="skin" type="radio" id="modern" data-skincd="SIT3"
-                                checked=""><label for="modern" class="modern"><span
-                                    class="skin-name">Modern</span></label></div>
-                        <div class="select-skin"><input name="skin" type="radio" id="premium" data-skincd="SIT2"><label
-                                for="premium" class="premium"><span class="skin-name">Premium</span></label></div>
-                    </div>
-                    <div class="skinbtn-group"><a href="#" class="button-primary button-large get-started">SAVE &amp;
-                            CONTINUE</a></div>
-                </div>
-            </div>
-        </div>
-        <div id="profile-modal" class="custom-nerd-modal common-resumesite1 " data-site-index="4">
-            <div class="upload-resume">
-                <div class="custom-modal-content"><span class="cancel-modal"></span>
-                    <div class="upload-photocontent">
-                        <h2 class="photo-heading resumemain-heading">Profile Photo</h2>
-                        <p class="profile-info">Resume websites have a profile photo that makes the site look
-                            professional and approachable. Let’s add yours!</p>
-                        <div class="photo-select">
-                            <div class="leftselect-photo"></div>
-                            <div class="select-photo">
-                                <div class="image-upload"><label for="file-input"><span class="upload-file"><i
-                                                class="far fa-upload"></i></span></label><span class="text-file">Select
-                                        New File</span><input id="file-input" type="file" dontvalidate="true"
-                                        accept="image/*"></div>
-                            </div>
-                        </div>
-                        <div class="uploading-section hidden"><span class="uploading-icon"><i
-                                    class="far fa-robot"></i></span><span class="updating-text">Uploading</span><span
-                                class="saved-image-name">""</span><span class="updating-msg">This may take a few
-                                seconds</span></div>
-                        <div class="sucess-section hidden"><span class="sucess-icon"><i
-                                    class="far fa-check"></i></span><span class="sucess-text">Success!</span><span
-                                class="saved-image-name">""</span><span class="updating-msg">Your Photo was
-                                uploaded</span></div>
-                        <div class="wrong-photo-section hidden"><span class="wrong-icon"><i
-                                    class="far fa-exclamation-circle"></i></span><span class="wrong-text">Oh no,
-                                something went wrong!</span><span class="updating-msg">Click the icon and try
-                                again.</span></div>
-                        <div class="skinbtn-group"><a href="#" id="uploadbtn"
-                                class="button-primary button-large get-started UploadText">UPLOAD NEW PHOTO</a></div>
-                        <div class="bottom-cancel"><a class="cancel-btn" href="javascript:void(0)">Cancel</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 
     <script src="https://c3.resumenerd.com/resumesite/build/static/js/main.bundle.js?v=219" crossorigin="anonymous"
@@ -476,5 +421,27 @@
             src="https://bat.bing.com/action/0?ti=5626035&amp;Ver=2&amp;mid=dff02387-981c-4b18-9e08-7d187d4c1d04&amp;bo=2&amp;sid=4a295dc038b311f0b8bd4f36754d11b6&amp;vid=348a63702e2611f0b70b6d72d2483fff&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D19.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1536&amp;sh=864&amp;sc=24&amp;tl=Resume%20Website&amp;p=https%3A%2F%2Fwww.resumenerd.com%2Fsites%2Fsagar_jagade_resume3&amp;r=&amp;lt=1317&amp;evt=pageLoad&amp;sv=1&amp;asc=G&amp;cdb=ARoR&amp;rn=372328"
             style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
 </body>
+<script>
+    document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Remove active class from all links
+            document.querySelectorAll('.nav-list a').forEach(a => a.classList.remove('active'));
+
+            // Add active class to clicked link
+            this.classList.add('active');
+
+            // Scroll to the section smoothly
+            const section = document.querySelector(this.getAttribute('href'));
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
 
 </html>
